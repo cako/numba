@@ -378,6 +378,9 @@ class Array(object):
         )
         return newarr, list(self.iter_contiguous_extent())
 
+    def flatten(self, order='C'):
+        return self.ravel(order=order)
+
     def ravel(self, order='C'):
         if order not in 'CFA':
             raise ValueError('order not C|F|A')
